@@ -1,0 +1,399 @@
+@book{haile_2010, place={New York}, title={Molecular dynamics simulation: elementary methods}, publisher={Wiley}, author={Haile, J. M.}, year={2010}} 
+
+@article{MLInterface,
+	doi = {10.1088/2515-7639/ab15c8},
+	publisher = {{IOP} Publishing},
+	volume = {2},
+	number = {3},
+	author = {Hiromi Oda and Shin Kiyohara and Teruyasu Mizoguchi},
+	title = {Machine learning for structure determination and investigating the structure-property relationships of interfaces},
+	year= {2019},
+	journal = {Journal of Physics: Materials},
+	abstract = {Interfaces, in which the atomic structures are greatly different from those in the bulk, play a crucial role in the material properties. Therefore, determination of a central structure that is involved with the interface properties is an important task in materials research. However, determination of the interface structure requires a huge number of calculations. We previously proposed a powerful machine learning technique based on virtual screening (VS) to determine interface structures (Kiyohara et al 2016 Sci. Adv. 2 e1600746). Here, we discuss the feasibility, versatility, and robustness of the prediction model for VS. Through this study, the prediction model constructed using only 5 types of grain boundaries determines the energies and structures of the 52 grain boundaries. Furthermore, based on the constructed prediction models, we investigated the geometrical differences between the grain boundaries of different rotation axes. We also investigated the structure-property relationship at the grain boundary (GB). We found that a short bond at the GB is the key factor for preferential vacancy formation at the GB.}
+}
+
+
+@article{Tribello2014,
+abstract = {Enhancing sampling and analyzing simulations are central issues in molecular simulation. Recently, we introduced PLUMED, an open-source plug-in that provides some of the most popular molecular dynamics (MD) codes with implementations of a variety of different enhanced sampling algorithms and collective variables (CVs). The rapid changes in this field, in particular new directions in enhanced sampling and dimensionality reduction together with new hardware, require a code that is more flexible and more efficient. We therefore present PLUMED 2 here - a complete rewrite of the code in an object-oriented programming language (C++). This new version introduces greater flexibility and greater modularity, which both extends its core capabilities and makes it far easier to add new methods and CVs. It also has a simpler interface with the MD engines and provides a single software library containing both tools and core facilities. Ultimately, the new code better serves the ever-growing community of users and contributors in coping with the new challenges arising in the field. {\textcopyright} 2013 Elsevier B.V. All rights reserved.},
+author = {Tribello, Gareth A. and Bonomi, Massimiliano and Branduardi, Davide and Camilloni, Carlo and Bussi, Giovanni},
+doi = {10.1016/j.cpc.2013.09.018},
+issn = {00104655},
+journal = {Computer Physics Communications},
+number = {2},
+title = {{PLUMED 2: New feathers for an old bird}},
+volume = {185},
+year = {2014}
+}
+
+@Article{B204069G,
+author ="Wilson, Nicholas T. and Johnston, Roy L.",
+title  ="A theoretical study of atom ordering in copper–gold nanoalloy clusters",
+journal  ="J. Mater. Chem.",
+year  ="2002",
+volume  ="12",
+issue  ="10",
+pages  ="2913-2922",
+publisher  ="The Royal Society of Chemistry",
+doi  ="10.1039/B204069G",
+url  ="http://dx.doi.org/10.1039/B204069G",
+abstract  ="Energy calculations have been carried out on high symmetry icosahedral and cuboctahedral Cu–Au nanoalloy clusters of various compositions{,} with the interatomic interactions modelled by the Gupta many-body potential. For each composition{,} the lowest energy isomers (“homotops”) tend to have predominantly Au atoms on the surface and Cu atoms in the core{,} and this phenomenon is explained in terms of surface energy{,} atomic size and trends in cohesive energies. A number of order parameters and mixing energies have been introduced and it is shown that there is good correlation between the cluster binding energy and the average distance of the Au atoms from the centre of the cluster. Comparisons are made with previous theoretical calculations on Cu–Au clusters{,} as well as with experimental studies of the structures and atom ordering of deposited Cu–Au particles."}
+
+@article{Giorgino2018,
+abstract = {The proper choice of collective variables (CVs) is central to biased-sampling free energy reconstruction methods in molecular dynamics simulations. The PLUMED 2 library, for instance, provides several sophisticated CV choices, implemented in a C++ framework; however, developing new CVs is still time consuming due to the need to provide code for the analytical derivatives of all functions with respect to atomic coordinates. We present two solutions to this problem, namely (a) symbolic differentiation and code generation, and (b) automatic code differentiation, in both cases leveraging open-source libraries (SymPy and Stan Math, respectively). The two approaches are demonstrated and discussed in detail implementing a realistic example CV, the local radius of curvature of a polymer. Users may use the code as a template to streamline the implementation of their own CVs using high-level constructs and automatic gradient computation. Program summary: Program Title: Practical approaches to the differentiation of collective variables in free energy codes: computer-algebra code generation and automatic differentiation Program Files doi: http://dx.doi.org/10.17632/r4r67bvkdn.1 Licensing provisions: GNU Lesser General Public License Version 3 (LGPL-3) Programming languages: C++, Python Nature of problem: The C++ implementation of collective variables (CVs, functions of atomic coordinates to be used in biased sampling applications) in biasing libraries for atomistic simulations, such as PLUMED [1], requires computation of both the variable and its gradient with respect to the atomic coordinates; coding and testing the analytical derivatives complicate the implementation of new CVs. Solution method: The paper shows two approaches to automate the computation of CV gradients, namely, symbolic differentiation with code generation and automatic code differentiation, demonstrating their implementation entirely with open-source software (respectively, SymPy and the Stan Math Library). Additional comments: The paper's accompanying code serves as an example and template for the methods described in the paper; it is distributed as the two modules curvature_codegen and curvature_autodiff integrated in PLUMED 2's source tree; the latest version is available at https://github.com/tonigi/plumed2-automatic-gradients. [1] Tribello GA, Bonomi M, Branduardi D, Camilloni C, Bussi G. PLUMED 2: New feathers for an old bird. Computer Physics Communications. 2014 Feb;185(2):604-13.},
+author = {Giorgino, Toni},
+doi = {10.1016/j.cpc.2018.02.017},
+issn = {00104655},
+journal = {Computer Physics Communications},
+title = {{How to differentiate collective variables in free energy codes: Computer-algebra code generation and automatic differentiation}},
+volume = {228},
+year = {2018}
+}
+
+@misc{Bonomi2019,
+abstract = {The PLUMED consortium unifies developers and contributors to PLUMED, an open-source library for enhanced-sampling, free-energy calculations and the analysis of molecular dynamics simulations. Here, we outline our efforts to promote transparency and reproducibility by disseminating protocols for enhanced-sampling molecular simulations.},
+author = {Bonomi, Massimiliano and Bussi, Giovanni and Camilloni, Carlo and Tribello, Gareth A. and Ban{\'{a}}{\v{s}}, Pavel and Barducci, Alessandro and Bernetti, Mattia and Bolhuis, Peter G. and Bottaro, Sandro and Branduardi, Davide and Capelli, Riccardo and Carloni, Paolo and Ceriotti, Michele and Cesari, Andrea and Chen, Haochuan and Chen, Wei and Colizzi, Francesco and De, Sandip and {De La Pierre}, Marco and Donadio, Davide and Drobot, Viktor and Ensing, Bernd and Ferguson, Andrew L. and Filizola, Marta and Fraser, James S. and Fu, Haohao and Gasparotto, Piero and Gervasio, Francesco Luigi and Giberti, Federico and Gil-Ley, Alejandro and Giorgino, Toni and Heller, Gabriella T. and Hocky, Glen M. and Iannuzzi, Marcella and Invernizzi, Michele and Jelfs, Kim E. and Jussupow, Alexander and Kirilin, Evgeny and Laio, Alessandro and Limongelli, Vittorio and Lindorff-Larsen, Kresten and L{\"{o}}hr, Thomas and Marinelli, Fabrizio and Martin-Samos, Layla and Masetti, Matteo and Meyer, Ralf and Michaelides, Angelos and Molteni, Carla and Morishita, Tetsuya and Nava, Marco and Paissoni, Cristina and Papaleo, Elena and Parrinello, Michele and Pfaendtner, Jim and Piaggi, Pablo and Piccini, Giovanni Maria and Pietropaolo, Adriana and Pietrucci, Fabio and Pipolo, Silvio and Provasi, Davide and Quigley, David and Raiteri, Paolo and Raniolo, Stefano and Rydzewski, Jakub and Salvalaglio, Matteo and Sosso, Gabriele Cesare and Spiwok, Vojt{\v{e}}ch and {\v{S}}poner, Jiř{\'{i}} and Swenson, David W.H. and Tiwary, Pratyush and Valsson, Omar and Vendruscolo, Michele and Voth, Gregory A. and White, Andrew},
+booktitle = {Nature Methods},
+doi = {10.1038/s41592-019-0506-8},
+issn = {15487105},
+number = {8},
+title = {{Promoting transparency and reproducibility in enhanced molecular simulations}},
+volume = {16},
+year = {2019}
+}
+
+@article{Faken1994,
+abstract = {The implementation of a method for systematic analysis of local atomic structure in combination with 3D computer graphics is described. The method, Common Neighbor Analysis, is a decomposition of the radial distribution function according to the local environment of the pairs of atoms and can provide direct interpretation of various features of the radial distribution function in terms of atomic structure. It can also be used to identify atoms in particular environment, such as FCC, HCP, BCC or icosahedral. We describe an application of this program to a study of crystal nucleation in a molten Cu slab. While the majority of atoms in the resulting crystals are classified as being FCC, stacking faults are observed and can be traced back to the near-critical nuclei. {\textcopyright} 1994.},
+author = {Faken, Daniel and J{\'{o}}nsson, Hannes},
+doi = {10.1016/0927-0256(94)90109-0},
+issn = {09270256},
+journal = {Computational Materials Science},
+number = {2},
+title = {{Systematic analysis of local atomic structure combined with 3D computer graphics}},
+volume = {2},
+year = {1994}
+}
+
+
+@article{Honeycutt1987,
+abstract = {The properties of small clusters of Lennard-Jones atoms were studied by using molecular dynamics simulations. Clusters containing from 13 to 147 atoms were found to undergo a transition, analogous to a melting transition for bulk materials, from a low-energy solidlike structure at low temperatures to a set of higher energy liquidlike structures at high temperatures. The transition creates noticeable features in plots of the equilibrium energy of clusters as a function of temperature, but the shapes of the curves depend on the size of the cluster and on whether a canonical ensemble or microcanonical ensemble is used for calculating the properties. The nonequilibrium energy as a function of temperature on heating or cooling at a finite rate can differ significantly from the equilibrium results. Coexistence among the minimum-energy structure, high-energy liquidlike structures, and typically one or more intermediate structures was observed over a range of temperatures. Results from potential energy minimization of fcc and icosahedral structures of various sizes indicate that a Lennard-Jones cluster must contain at least 5000 atoms before the fcc structure becomes more stable than the structure of the Mackay icosahedra. {\textcopyright} 1987 American Chemical Society.},
+author = {Honeycutt, J. Dana and Andersen, Hans C.},
+doi = {10.1021/j100303a014},
+issn = {00223654},
+journal = {Journal of Physical Chemistry},
+number = {19},
+title = {{Molecular dynamics study of melting and freezing of small Lennard-Jones clusters}},
+volume = {91},
+year = {1987}
+}
+@article{Stukowski2014,
+abstract = {This article discusses computational analysis methods typically used in atomistic modeling of crystalline materials and highlights recent developments that can provide better insights into processes at the atomic scale. Topics include the classification of local atomic structures, the transition from atomistics to mesoscale and continuum-scale descriptions, and the automated identification of dislocations in atomistic simulation data. {\textcopyright} 2013 The Minerals, Metals & Materials Society.},
+author = {Stukowski, Alexander},
+doi = {10.1007/s11837-013-0827-5},
+issn = {10474838},
+journal = {JOM},
+number = {3},
+title = {{Computational analysis methods in atomistic modeling of crystals}},
+volume = {66},
+year = {2014}
+}
+
+@article{Stukowski2012,
+abstract = {We discuss existing and new computational analysis techniques to classify local atomic arrangements in large-scale atomistic computer simulations of crystalline solids. This article includes a performance comparison of typical analysis algorithms such as common neighbor analysis (CNA), centrosymmetry analysis, bond angle analysis, bond order analysis and Voronoi analysis. In addition we propose a simple extension to the CNA method that makes it suitable for multi-phase systems. Finally, we introduce a new structure identification algorithm, the neighbor distance analysis, which is designed to identify atomic structure units in grain boundaries. {\textcopyright} 2012 IOP Publishing Ltd.},
+author = {Stukowski, Alexander},
+doi = {10.1088/0965-0393/20/4/045021},
+issn = {09650393},
+journal = {Modelling and Simulation in Materials Science and Engineering},
+number = {4},
+title = {{Structure identification methods for atomistic simulations of crystalline materials}},
+volume = {20},
+year = {2012}
+}
+
+@techreport{EMMO,
+     title = {{Mobile Systems IV}},
+     author = {Burkhard Stiller and Thomas Bocek and Fabio Hecht and Guilherme Machado and Peter Racz and Martin Waldburger},
+     group = {csg},
+     year = {2010},
+     institution = {University of Zurich, Department of Informatics},
+     month = {01},
+     Date-Added = {2010-01-11 10:05:52},
+     Date-Modified = {2010-07-22 12:08:45}
+}
+
+@techreport{EMMC,
+     title = {{Documentation on Materials Modelling Ontology in UML}},
+     author = {Nadja Adamovic},
+     group = {European Materials Modelling Council},
+     year = {2016},
+     institution = {TU WIEN},
+     month = {01},
+     Date-Added = {2016-01-09}
+}
+
+
+@article{Lansford2020,
+abstract = {There is a need to characterize complex materials and their dynamics under reaction conditions to accelerate materials design. Adsorbate vibrational excitations are selective to adsorbate/surface interactions and infrared (IR) spectra associated with activating adsorbate vibrational modes are accurate, capture details of most modes, and can be obtained operando. Current interpretation depends on heuristic peak assignments for simple spectra, precluding the possibility of obtaining detailed structural information. Here, we combine data-based approaches with chemistry-dependent problem formulation to develop physics-driven surrogate models that generate synthetic IR spectra from first-principles calculations. Using synthetic IR spectra of carbon monoxide on platinum, we implement multinomial regression via neural network ensembles to learn probability distributions functions (pdfs) that describe adsorption sites and quantify uncertainty. We use these pdfs to infer detailed surface microstructure from experimental spectra and extend this methodology to other systems as a first step towards characterizing complex interfaces and closing the materials gap.},
+author = {Lansford, Joshua L. and Vlachos, Dionisios G.},
+doi = {10.1038/s41467-020-15340-7},
+issn = {20411723},
+journal = {Nature Communications},
+number = {1},
+title = {{Infrared spectroscopy data- and physics-driven machine learning for characterizing surface microstructure of complex materials}},
+volume = {11},
+year = {2020}
+}
+
+@article{drautz2019,
+  title = {Atomic cluster expansion for accurate and transferable interatomic potentials},
+  author = {Drautz, Ralf},
+  journal = {Phys. Rev. B},
+  volume = {99},
+  issue = {1},
+  pages = {014104},
+  numpages = {15},
+  year = {2019},
+  month = {Jan},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevB.99.014104},
+  url = {https://link.aps.org/doi/10.1103/PhysRevB.99.014104}
+}
+@article{zeni2021compact,
+  title={Compact atomic descriptors enable accurate predictions via linear models},
+  author={Zeni, Claudio and Rossi, Kevin and Glielmo, Aldo and De Gironcoli, Stefano},
+  journal={The Journal of Chemical Physics},
+  volume={154},
+  number={22},
+  pages={224112},
+  year={2021},
+  publisher={AIP Publishing LLC}
+}
+
+@article{Zeni2021,
+abstract = {The simulation and analysis of the thermal stability of nanoparticles, a stepping stone towards their application in technological devices, require fast and accurate force fields, in conjunction with effective characterisation methods. In this work, we develop efficient, transferable, and interpretable machine learning force fields for gold nanoparticles based on data gathered from Density Functional Theory calculations. We use them to investigate the thermodynamic stability of gold nanoparticles of different sizes (1 to 6 nm), containing up to 6266 atoms, concerning a solid-liquid phase change through molecular dynamics simulations. We predict nanoparticle melting temperatures in good agreement with available experimental data. Furthermore, we characterize the solid-liquid phase change mechanism employing an unsupervised learning scheme to categorize local atomic environments. We thus provide a data-driven definition of liquid atomic arrangements in the inner and surface regions of a nanoparticle and employ it to show that melting initiates at the outer layers.},
+author = {Zeni, Claudio and Rossi, Kevin and Pavloudis, Theodore and Kioseoglou, Joseph and de Gironcoli, Stefano and Palmer, Richard E. and Baletto, Francesca},
+doi = {10.1038/s41467-021-26199-7},
+issn = {20411723},
+journal = {Nature Communications},
+number = {1},
+title = {{Data-driven simulation and characterisation of gold nanoparticle melting}},
+volume = {12},
+year = {2021}
+}
+
+@article{Pizzi2016,
+abstract = {Computational science has seen in the last decades a spectacular rise in the scope, breadth, and depth of its efforts. Notwithstanding this prevalence and impact, it is often still performed using the renaissance model of individual artisans gathered in a workshop, under the guidance of an established practitioner. Great benefits could follow instead from adopting concepts and tools coming from computer science to manage, preserve, and share these computational efforts. We illustrate here our paradigm sustaining such vision, based around the four pillars of Automation, Data, Environment, and Sharing. We then discuss its implementation in the open-source AiiDA platform (http://www.aiida.net), that has been tuned first to the demands of computational materials science. AiiDA's design is based on directed acyclic graphs to track the provenance of data and calculations, and ensure preservation and searchability. Remote computational resources are managed transparently, and automation is coupled with data storage to ensure reproducibility. Last, complex sequences of calculations can be encoded into scientific workflows. We believe that AiiDA's design and its sharing capabilities will encourage the creation of social ecosystems to disseminate codes, data, and scientific workflows.},
+author = {Pizzi, Giovanni and Cepellotti, Andrea and Sabatini, Riccardo and Marzari, Nicola and Kozinsky, Boris},
+doi = {10.1016/j.commatsci.2015.09.013},
+issn = {09270256},
+journal = {Computational Materials Science},
+title = {{AiiDA: automated interactive infrastructure and database for computational science}},
+volume = {111},
+year = {2016}
+}
+
+@misc{Ghiringhelli2017,
+abstract = {With big-data driven materials research, the new paradigm of materials science, sharing and wide accessibility of data are becoming crucial aspects. Obviously, a prerequisite for data exchange and big-data analytics is standardization, which means using consistent and unique conventions for, e.g., units, zero base lines, and file formats. There are two main strategies to achieve this goal. One accepts the heterogeneous nature of the community, which comprises scientists from physics, chemistry, bio-physics, and materials science, by complying with the diverse ecosystem of computer codes and thus develops "converters" for the input and output files of all important codes. These converters then translate the data of each code into a standardized, code-independent format. The other strategy is to provide standardized open libraries that code developers can adopt for shaping their inputs, outputs, and restart files, directly into the same code-independent format. In this perspective paper, we present both strategies and argue that they can and should be regarded as complementary, if not even synergetic. The represented appropriate format and conventions were agreed upon by two teams, the Electronic Structure Library (ESL) of the European Center for Atomic and Molecular Computations (CECAM) and the NOvel MAterials Discovery (NOMAD) Laboratory, a European Centre of Excellence (CoE). A key element of this work is the definition of hierarchical metadata describing state-of-the-art electronic-structure calculations.},
+author = {Ghiringhelli, Luca M. and Carbogno, Christian and Levchenko, Sergey and Mohamed, Fawzi and Huhs, Georg and L{\"{u}}ders, Martin and Oliveira, Micael and Scheffler, Matthias},
+booktitle = {npj Computational Materials},
+doi = {10.1038/s41524-017-0048-5},
+issn = {20573960},
+number = {1},
+title = {{Towards efficient data exchange and sharing for big-data driven materials science: Metadata and data formats}},
+volume = {3},
+year = {2017}
+}
+
+
+@article{NEB_Paper,
+author = {Henkelman,Graeme  and Jónsson,Hannes },
+title = {Improved tangent estimate in the nudged elastic band method for finding minimum energy paths and saddle points},
+journal = {The Journal of Chemical Physics},
+volume = {113},
+number = {22},
+pages = {9978-9985},
+year = {2000},
+doi = {10.1063/1.1323224},
+
+URL = { 
+        https://doi.org/10.1063/1.1323224
+    
+},
+eprint = { 
+        https://doi.org/10.1063/1.1323224}}
+
+
+@inbook{NEB_Book,
+author = { HANNES   JÓNSSON  and  GREG   MILLS  and  KARSTEN W.   JACOBSEN },
+title = {Nudged elastic band method for finding minimum energy paths of transitions},
+booktitle = {Classical and Quantum Dynamics in Condensed Phase Simulations},
+chapter = {},
+pages = {385-404},
+doi = {10.1142/9789812839664_0016},
+URL = {https://www.worldscientific.com/doi/abs/10.1142/9789812839664_0016},
+eprint = {https://www.worldscientific.com/doi/pdf/10.1142/9789812839664_0016},
+    abstract = { Abstract The following sections are included: Introduction Chain-of-states methods The NEB method Implementation of the NEB method Application to an adatom hop on a surface What happens if the springs are skipped? An object function for NEB Summary APPENDIX A. The two-dimensional test problems Model I: LEPS potential Model II: LEPS + Harmonic oscillator potential REFERENCES }
+}
+
+
+@article{NEB_Climb,
+author = {Henkelman,Graeme  and Uberuaga,Blas P.  and Jónsson,Hannes },
+title = {A climbing image nudged elastic band method for finding saddle points and minimum energy paths},
+journal = {The Journal of Chemical Physics},
+volume = {113},
+number = {22},
+pages = {9901-9904},
+year = {2000},
+doi = {10.1063/1.1329672},
+
+URL = { 
+        https://doi.org/10.1063/1.1329672
+    
+},
+eprint = { 
+        https://doi.org/10.1063/1.1329672
+    
+}
+
+}
+
+
+@article{vanmeel2012,
+title={A parameter-free, solid-angle based, nearest-neighbor algorithm},
+journal={J. Chem. Phys.}, 
+volume={136}, pages={234107}, 
+year={2012}, 
+opturl={https://doi.org/10.1063/1.4729313},
+author={Jacobus A. van Meel and Laura Filion and Chantal Valeriani and Daan Frenkel},
+}
+
+@article{epan,
+author = {Epanechnikov, V. A.},
+title = {Non-Parametric Estimation of a Multivariate Probability Density},
+journal = {Theory of Probability \& Its Applications},
+volume = {14},
+number = {1},
+pages = {153-158},
+year = {1969},
+doi = {10.1137/1114019},
+URL = { 
+        https://doi.org/10.1137/1114019
+},
+eprint = { 
+        https://doi.org/10.1137/1114019
+}
+}
+
+@article{H_dissociative_adsorption,
+  title = {Quantum and thermal effects in ${\mathrm{H}}_{2}$ dissociative adsorption: Evaluation of free energy barriers in multidimensional quantum systems},
+  author = {Mills, Greg and J\'onsson, Hannes},
+  journal = {Phys. Rev. Lett.},
+  volume = {72},
+  issue = {7},
+  pages = {1124--1127},
+  numpages = {0},
+  year = {1994},
+  month = {Feb},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevLett.72.1124},
+  url = {https://link.aps.org/doi/10.1103/PhysRevLett.72.1124}
+}
+
+@article{Reversiblework_TST_H,
+       author = {{Mills}, Gregory and {J{\'o}nsson}, Hannes and {Schenter}, Gregory K.},
+        title = "{Reversible work transition state theory: application to dissociative adsorption of hydrogen}",
+      journal = {Surface Science},
+     keywords = {Physics - Chemical Physics},
+         year = 1995,
+        month = feb,
+       volume = {324},
+       number = {2},
+        pages = {305-337},
+          doi = {10.1016/0039-6028(94)00731-4},
+archivePrefix = {arXiv},
+       eprint = {chem-ph/9411012},
+ primaryClass = {physics.chem-ph},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/1995SurSc.324..305M},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@article{preconditioning_MEP,
+author = {Makri,Stela  and Ortner,Christoph  and Kermode,James R. },
+title = {A preconditioning scheme for minimum energy path finding methods},
+journal = {The Journal of Chemical Physics},
+volume = {150},
+number = {9},
+pages = {094109},
+year = {2019},
+doi = {10.1063/1.5064465},
+
+URL = { 
+        https://doi.org/10.1063/1.5064465
+    
+},
+eprint = { 
+        https://doi.org/10.1063/1.5064465
+    
+}
+
+}
+
+@article{NEB_Climb,
+author = {Henkelman,Graeme  and Uberuaga,Blas P.  and Jónsson,Hannes },
+title = {A climbing image nudged elastic band method for finding saddle points and minimum energy paths},
+journal = {The Journal of Chemical Physics},
+volume = {113},
+number = {22},
+pages = {9901-9904},
+year = {2000},
+doi = {10.1063/1.1329672},
+
+URL = { 
+        https://doi.org/10.1063/1.1329672
+    
+},
+eprint = { 
+        https://doi.org/10.1063/1.1329672
+    
+}
+
+}
+@article{NEB_automated,
+author = {Kolsbjerg,Esben L.  and Groves,Michael N.  and Hammer,Bjørk },
+title = {An automated nudged elastic band method},
+journal = {The Journal of Chemical Physics},
+volume = {145},
+number = {9},
+pages = {094107},
+year = {2016},
+doi = {10.1063/1.4961868},
+
+URL = { 
+        https://aip.scitation.org/doi/abs/10.1063/1.4961868
+    
+},
+eprint = { 
+        https://aip.scitation.org/doi/pdf/10.1063/1.4961868
+    
+}
+
+}
+@article{Improved_tangent_estimate_NEB,
+author = {Henkelman,Graeme  and Jónsson,Hannes },
+title = {Improved tangent estimate in the nudged elastic band method for finding minimum energy paths and saddle points},
+journal = {The Journal of Chemical Physics},
+volume = {113},
+number = {22},
+pages = {9978-9985},
+year = {2000},
+doi = {10.1063/1.1323224},
+
+URL = { 
+        https://doi.org/10.1063/1.1323224
+    
+},
+eprint = { 
+        https://doi.org/10.1063/1.1323224
+    
+}
+
+}

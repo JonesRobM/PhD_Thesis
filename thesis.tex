@@ -1,0 +1,154 @@
+\RequirePackage[english=UKenglish]{hyphsubst}
+\RequirePackage{acro}
+\documentclass[twoside,openright,titlepage,numbers=noenddot,headinclude,footinclude=true,cleardoublepage=empty,listof=totoc,paper=a4,fontsize=12pt,australian,twoside=semi,DIV=calc]{scrreprt} 
+% -----------------------------------------------------------------------------
+%   CONFIGURATION
+% -----------------------------------------------------------------------------
+% Thesis and submission:
+\newcommand{\myTitle}{Multi-scale modelling approaches to plasmon enhanced photo-catalysis on metallic nanoparticles}
+\newcommand{\mySubmissionYear}{2022}
+\newcommand{\mySubmissionMonth}{November}
+\newcommand{\mySubmissionDay}{30}
+
+% Regarding yourself:
+\newcommand{\myFirstName}{Robert Michael}
+\newcommand{\myLastName}{Jones}
+\newcommand{\myWebsite}{https://www.kcl.ac.uk/people/robert-jones}
+\newcommand{\myBirthYear}{1995}
+\newcommand{\myBirthMonth}{November}
+\newcommand{\myBirthDay}{02}
+\newcommand{\myBirthPlace}{Stoke on Trent}
+
+% Primary supervisor:
+\newcommand{\myProfTitle}{Dr}
+\newcommand{\myProfFirstName}{Francsca}
+\newcommand{\myProfLastName}{Baletto}
+\newcommand{\myProfWebsite}{https://www.unimi.it/en/ugov/person/francesca-baletto}
+
+% Co-supervisor:
+\newcommand{\mySecondProfTitle}{Professor}
+\newcommand{\mySecondProfFirstName}{Anatoly}
+\newcommand{\mySecondProfLastName}{Zayats}
+\newcommand{\mySecondProfWebsite}{https://www.kcl.ac.uk/people/anatoly-zayats}
+
+% Co-supervisor:
+\newcommand{\myThirdProfTitle}{Dr}
+\newcommand{\myThirdProfFirstName}{Roberto}
+\newcommand{\myThirdProfLastName}{D'Agosta}
+\newcommand{\myThirdProfWebsite}{http://nano-bio.ehu.es/users/dagosta}
+
+% University related:
+\newcommand{\TSCM}{Theory and Simulation of Condensed Matter}
+\newcommand{\TSCMWebsite}{https://www.kcl.ac.uk/research/theory-simulation-of-condensed-matter}
+\newcommand{\PNWebsite}{https://www.kcl.ac.uk/research/photonics-nanotechnology}
+\newcommand{\PN}{Photonics \& Nanotechnology}
+\newcommand{\myFaculty}{Faculty of Natural, Mathematical, \& Engineering Sciences}
+\newcommand{\mySchool}{Department of Physics}
+\newcommand{\myUni}{King's College London}
+% -----------------------------------------------------------------------------
+
+\input{classicthesis-config}
+\usepackage[a4paper,top=25.4mm,bottom=25.4mm,left=25mm, right=25mm,bindingoffset=8mm]{geometry} 
+
+\usepackage[acronym]{glossaries}
+%\glsdisablehyper
+%\makeglossaries
+ 
+%\makeglossaries
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+%\input{text/ch0/ch0-gloss}
+\usepackage{biblatex}
+\addbibresource{Lib.bib}
+\begin{document}
+  \frenchspacing
+  \raggedbottom
+  \selectlanguage{british}
+  \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+  \pagestyle{plain}
+  \pagenumbering{roman}
+ 
+  \singlespacing
+  \input{text/ch0/ch0-title}
+  \input{text/ch0/ch0-backside}
+  
+  \onehalfspacing
+  \input{text/ch0/ch0-contents}
+
+%----------------------------------------------------------------------------------------
+%	QUOTATION PAGE
+%----------------------------------------------------------------------------------------
+
+\vspace*{0.2\textheight}
+
+\noindent\enquote{\itshape Who am I? Why am I here?
+Forget the questions, someone get me another beer.
+What's the meaning of life? What's the meaning of it all?
+You gotta learn to dance before you learn to crawl.}\bigbreak
+
+\hfill Meat Loaf
+
+\vspace*{0.2\textheight}
+
+\noindent\enquote{\itshape Fur immer Punk, das mocht' ich sein fur immer Punk. Willst du wirklich immer Hippie bleiben?}\bigbreak
+
+\hfill Hladno Pivo
+
+\vspace*{0.2\textheight}
+
+\noindent\enquote{\itshape Lasciate ogne speranza, voi ch'intrate.}\bigbreak
+
+\hfill Dante Alighieri
+
+  \input{text/ch0/ch0-gloss}
+
+  \chapter*{Abstract}
+  \addcontentsline{toc}{chapter}{Abstract}
+  \input{text/ch0/ch0-abstract}
+  
+  \chapter*{Statement of Authorship}
+  \addcontentsline{toc}{chapter}{Declaration of Authorship}
+  \input{text/ch0/ch0-declaration}
+  
+  \input{text/ch0/ch0-acknowledgements}
+  \input{text/ch0/ch0-publications}
+  \input{text/ch0/ch0-dedication}
+%
+
+  \cleardoublepage
+  \pagestyle{scrheadings}
+  \pagenumbering{arabic}
+  \onehalfspacing
+  
+  \chapter{Introduction}\label{c:Introduction}
+  \input{text/Chapters/Intro}
+  
+  \chapter{Theory and background}\label{c:Theory}
+  \input{text/Chapters/Theory}
+  
+    \chapter{Methods}\label{c:Methods}
+  \input{text/Chapters/Methods}
+  
+  \chapter{Sapphire}\label{c:Sapphire}
+  \input{text/Chapters/Sapphire}
+  
+  \chapter{Optical and electrostatic properties of Au-based nanoparticles}\label{c:L-M}
+  \input{text/Chapters/DFT}  
+
+  \chapter{Formation process of AuPt nanoalloys}\label{c:Coal}
+  \input{text/Chapters/MD}
+
+  \chapter{Alloying of plasmonic and catalytic metals}\label{c:Alloy}
+  \input{text/Chapters/Metallics} 
+ 
+    \chapter{AuPt in an environment}\label{c:Water}
+  \input{text/Chapters/Water}
+  
+  \chapter{Conclusions}\label{c:Conclusions}
+  \input{text/Chapters/Conclusions}
+
+  \input{text/app-bibliography}
+  
+\end{document}  
