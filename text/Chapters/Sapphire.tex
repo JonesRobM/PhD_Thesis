@@ -116,7 +116,7 @@ The Gaussian distribution is the default choice.
 Alternatives, such as the Epanechnikov \cite{epan}, and the uniform distribution, are also currently supported. 
 
 Figure \ref{fig:pddf_params} shows the effect of the $K$ and $h$ choice in the PDDF calculation, as a function of the independent parameter $d$, written in terms of the lattice bulk $a_0$. 
-Setting the bandwidth, $h$, is a delicate delicate step. The $h$-choice should balance a too fine resolution – where each distance might be present a single time, and below any reasonable resolution – and a too large one – where different neighbour shells are projected onto the same distance width. 
+Setting the bandwidth, $h$, is a delicate step. The $h$-choice should balance a too fine resolution ~-~ where each distance might be present a single time, and below any reasonable resolution ~-~ and a too large one ~-~ where different neighbour shells are projected onto the same distance width. 
 %We suggest to consider values below half of the distance between the first and second nearest neighbour as the proper choice for distinguishing nearest neighbours peaks in solids.
 %
 As a default, we have set the bandwidth to be 0.05 of the bulk lattice, which we have found to be sufficiently broad to smooth the sharp Dirac peaks from having a finite sample, and to sufficiently resolve key features, \textit{i.e.,} the first peak, minimum, and the second peak (orange line in Figure \ref{fig:pddf_params}. In principle, one may consider the h parameter to be comparable to the resolution in various microscopy techniques. As such, deviating from the default value must be done whilst considering the physical meaning of this parameter. That is to say that measuring interatomic distances to arbitrary precision is not possible at finite temperatures due to lattice vibrations.
@@ -168,7 +168,7 @@ For NAs with a large amount of Pt, the second peak also still presents a shoulde
     \label{eqn:gofr}
 \end{equation}
 %
-where $\rho$ is the bulk density of atoms, $dn(r)$ is a function which computes the density of atoms within a spherical shell thickness of $dr$.
+where $\rho$ is the bulk density of atoms, $dn(r)$ is the number of atoms within the spherical shell of thickness of $dr$.
 
 
 The 3D chemical ordering of a nanoalloy can be qualitatively, if not quantitatively, extracted from the radial distribution function (RDF) of the chemical species in the NA. %
@@ -196,7 +196,7 @@ For binary nanoalloys, behind the how atoms are radially distributed, a handy an
 \begin{equation}
     \Delta(CoM) = \sum_{i \in A} \frac{r_{i,A}}{N_A} - \sum_{i \in B} \frac{r_{i,B}}{N_B} 
 \end{equation}
-where $r_{i,A \in A}$ is the radial distance of the atom-$i$ of species A taken from the centre of mass of the sub-region A. Similarly, for the B sub-cluster. $N_A(B)$ is the number of atoms A(B) in the nanoparticle. $\Delta(CoM)$ is expected to be close to zero for alloyed, core-shell, and multi-shell ordering, but not zero when the phase-segregation breaks the radial symmetry. We provide in Figure \ref{fig:ens-avg} an example of this measure, averaged over independent ensembles. 
+where $r_{i,A \in A}$ is the radial distance of the atom-$i$ of species A taken from the centre of mass of the nanoparticle. Similarly, for the B sub-cluster. $N_A(B)$ is the number of atoms A(B) in the nanoparticle. $\Delta(CoM)$ is expected to be close to zero for alloyed, core-shell, and multi-shell ordering, but not zero when the phase-segregation breaks the radial symmetry. We provide in Figure \ref{fig:ens-avg} an example of this measure, averaged over independent ensembles. 
 
 \subsection{Adjacency matrix based descriptors}
 
@@ -237,10 +237,7 @@ Second, the aGCN is able to characterise the nanoparticle's surface sites - avoi
 Finally, the use of the aGCN offers a route to estimate the surface area, beyond, e.g., spherical approximations. 
 %
 The nanoparticle's surface can be well approximated by writing it as a sum over atomic contributions, which are a function of the atomic radius $r_{at}$ weighted with their aGCN. The latter is a measure of how much they are "exposed": \cite{Rossi2020}
-\begin{equation}
-  A_{MNP} = 4 \pi \sum_{i}r^2_{at,i}\left(1 - \frac{aGCN_i}{CN_{max}}  \right)
-\end{equation}
-%
+
 A full comparison of the surface area calculated for closed shell geometries using cluster spherical approximation, geometrical consideration, and based on the aGCN has been reported in Ref. \cite{Rossi2020}.
 
 \begin{figure}[t!]
@@ -295,7 +292,7 @@ The level of concertedness, $C$, is instead defined as the change in the number 
 When all the atoms in the nanoparticle change their local collectivity at time $t$, but remains stable at the successive time step $t +\Delta t$, $C(t - \Delta t, t, t +\Delta t)$ reaches its maximum value,  1.
 %
 
-Note, all the descriptors of mobility, concertedness, and collectivity discussed in this section display a dependence on the magnitude of $\Delta(t)$.
+Note, all the descriptors of mobility, concertedness, and collectivity discussed in this section display a dependence on the magnitude of $\Delta t$.
 A too long $\Delta$t may affect the H and C estimate by coarsening many atomic rearrangements into a single one. 
 A too short $\Delta$t may unfaithfully describe a single step rearrangement as a multi-step one.
 %
@@ -324,7 +321,7 @@ R^{chem}_{i} = \sum_{j \ne i} AA_{ij}^{chem} (\delta t)
 \end{figure}
 
 Single-step mechanisms involving only a section of the cluster, or multi-step processes are characterised by lower values of $C\left(t  - \Delta t, t, t + \Delta t \right)$, while continuous atomic rearrangements display C $\sim$ 0. 
-This is precisely exemplified in Figure \ref{fig:Mobility}, which characterises the concertedness and collectivity of rearrangements in the AuPd NA undergoing a solid-liquid phase change when heated above 700~K.
+This is precisely exemplified in Figure \ref{fig:Mobility}, which characterises the concertedness and collectivity of rearrangements in the AuPt NA undergoing a solid-liquid phase change when heated above 700~K.
 
 The C statistic is consistently near 0 whilst the H statistic monotonically increases as a function of temperature. 
 This is indicative of a highly dynamical object whose constituent atoms are regularly rearranging with respect to one another.
@@ -333,10 +330,13 @@ By the same token, we also draw attention to the sharp peak in the C statistic a
 %
 In this instance, this is representative of the collective motion of the Pt atoms within the cluster, which quickly rearrange into a more energetically favourable geometry shortly after thermal equilibration of the NA.
 
+An intuitive and natural extension to the \texttt{Sapphire} library would be to consider the effects of ``cage breaking'' effects as presented and discussed by de Souze and Wales \cite{10.1063/1.2992128}. Such mechanisms were primarily considered from the perspective of describing diffusion in structural glass~-~formers, however, the language and order parameters presented in the article may be readily transferred to describe the nature of changes in nearest neighbours as has been presented here via $H$ and $C$. Indeed, in the reference article, the criterion for a change in atomic environment is similar to that implemented in \texttt{Sapphire}, wherein an appreciable change in the inter~-~atomic distance, as determined by the RDF, indicates a change in atomic environment. Where the real difference lies is that a cage breaking event is indicated by a minimum of two changes in the adjacency network of a specified atom. Again, reminiscent of the order parameter presented above. In the article, ``productive cage breaks'' are identified as a mechanism for driving long~-~term diffusion occurring at low temperatures. Therefore, rephrasing the analysis of diffusion events with \texttt{Sapphire} may permit the recovery of diffusion coefficients for given NAs, and provide an avenue to explore the PES in the fashion described by the authors \cite{10.1063/1.2992128}.
+
 \subsection{Common Neighbour Analysis: signatures and patterns}
 \label{sec:CNA}
 %
-To classify the geometrical environments of core and surface atoms, we evaluate all of the common neighbour analysis (CNA) signatures attributed to each pair of nearest-neighbour atoms. 
+To classify the geometrical environments of core and surface atoms, we evaluate all of the common neighbour analysis (CNA) signatures, as proposed by Honeycutt and Andersen \cite{doi:10.1021/j100303a014}, attributed to each pair of nearest-neighbour atoms. The method of determining the atomic CNA of a cluster is generalisation of the method proposed by Blaisten~-~Farojas and Andersen \cite{BLAISTENBAROJAS1985548}.
+
 CNA signatures are of the form $(rst)$ such that $r$ is the number of nearest-neighbours common to both atoms in the pair; $s$ is the number of bonds between shared neighbours and $t$ is the longest chain which can be made from bonding s atoms if they are nearest neighbours. 
 While an individual CNA signature describes the local environment of a pair of neighbours, the estimate of the percentage of how many pairs contributes to selected CNA signatures provides information on the overall nanoparticle's structure, allowing a fast classification into expected geometrical family, as icosahedral, decahedral, or FCC \cite{Baletto_2019}.
 %
@@ -499,7 +499,7 @@ This temperature is too low to activate structural rearrangements within the tim
 
 We define the local heterogeneous atomic environment (LAE) as being the percentage of species $B=Pt$ with $LAE$ neighbours of species $A=Au$. $LAE=0$ indicates that these atoms create no heterogeneous bonds. 
 %
-$1 \leq LAE \leq 6$ describes a mix environment; while $LAE>9$ suggest that these atoms (Pt) are almost totally encapsulation by species $Au$ atoms.
+$1 \leq LAE \leq 6$ describes a mixed environment; while $LAE>9$ suggest that these atoms (Pt) are almost totally encapsulation by species $Au$ atoms.
 %
 Initially, we note that all descriptors are found to have only small inter-sample variations at approximately 10\% of the mean value. 
 All the descriptors considered, namely the radius of gyration (RoG), the number of Pt at the surface (Pt$_{surf}$, LAE of Pt, and the distance between the sub-region centres of mass $\Delta(CoM)$, versus time, show that a structural transformation occurs at the beginning (below 100 ns), with Pt incorporating inside the Au core and decreasing the number of Pt at the surface. At the same time, we do recognise other two steps.
@@ -532,19 +532,23 @@ In the manual and tutorials we demonstrate how \texttt{Sapphire} may interface w
 
 \subsection{Electrocatalytic properties via a microkinetic model}
 \label{sec:electrocat}
-A simple micro-kinetic model for the current density j$_{\mathrm{nanoparticle}}$(t,T,U) produced by a nanoparticle, for such an electro-chemical process, can be written as:
+
+As has been demonstrated and discussed in the literature \cite{https://doi.org/10.1002/cphc.201900564,C9NA00252A}, the aGCN as defined in Equation \ref{eqn:aGCN} can be employed as geometrical descriptor for both oxygen and CO$_{2}$ electrochemical reduction \cite{C6SC04788B,doi:10.1021/acscatal.7b01194}. At an applied potential $U$, and temperature
+$T$, an isomer characterised by a specific aGCN fingerprint 
+produces a current density from a reaction step associated with
+a free~-~reaction energy $\Delta G$, given by a simple micro-kinetic model, j$_{\mathrm{nanoparticle}}$(t,T,U). For such an electro-chemical process, the full expression can be written as:
 \begin{eqnarray}
 j_{\mathrm{nanoparticle}}(t,T,U) &=&\sum_{\alpha} \mathcal{C} \xi(t,T)\alpha
 e^{\beta \Delta G (U, T, \alpha)} \mbox{~,}
 \label{Eq:jnp}
 \end{eqnarray}
-where $\Delta G (U, T, \alpha)$ labels the reaction free energy at the applied potential $U$ and temperature $T$, which is also a function of the descriptor $\alpha$, $\beta$ is the Maxwell-Boltzmann factor, $\xi(t,T) = \frac{\Omega(\alpha)}{N_{\mathrm{site}}(t,T)}$ is the fraction of non-equivalent adsorption sites $\Omega(\alpha)$ to the total number of sites available, $N_{\mathrm{site}}$, and the sum runs over the collection of the non equivalent sites appearing in the nanoparticle under consideration. The latter are also being categorised by their $\alpha$ values.
+where $\Delta G (U, T, \alpha)$ labels the reaction free energy at the applied potential $U$ and temperature $T$, which is also a function of the descriptor $\alpha$, $\beta$ is the Maxwell-Boltzmann factor, $\xi(t,T) = \frac{\Omega(\alpha)}{N_{\mathrm{site}}(t,T)}$ is the fraction of non-equivalent adsorption sites $\Omega(\alpha)$ to the total number of sites available, $N_{\mathrm{site}}$, the prefactor $\mathcal{C}$ is fitted to reproduce the known specific current of low-Miller-index surfaces, and the sum runs over the collection of the non equivalent sites appearing in the nanoparticle under consideration. The latter are also being categorised by their $\alpha$ values. Indeed, a similar model was proposed and deployed by Tripkovic \textit{et al} in which $\Delta G$ was computed within a DFT framework for adsorption sites on low Miller~-~Index surfaces \cite{Tripkovic2014-wl} .
 %
 %Note that, for a fixed overpotential U, temperature T, and nanoparticle geometry, the specific activity of a nanoparticle is determined solely by the scaling relationship between $\Delta G$ and the $\alpha$ descriptor of choice, and number and kind of non equivalent adsorption sites at the nanoparticle surface.
     %
-Note that in \ref{Eq:jnp} the effect of the potential is treated as an a posteriori correction, in line with the computational hydrogen electrode model \cite{Norskov1998}. 
+Note that in \ref{Eq:jnp} the effect of the potential is treated as an \textit{a posteriori} correction, in line with the computational hydrogen electrode model \cite{Norskov1998}. 
 %
-The aGCN, Eq. \ref{eqn:aGCN}, of a surface site is an accurate descriptor to predict the activity of a metallic adsorption site, as demonstrated for Au, Cu, Pt, PtNi, catalysing the electrochemical reduction of oxygen or carbon dioxide  \cite{Calle-Vallejo2014,Calle2015,Zhao2016}.
+The aGCN, Equation \ref{eqn:aGCN}, of a surface site is an accurate descriptor to predict the activity of a metallic adsorption site, as demonstrated for Au, Cu, Pt, PtNi, catalysing the electrochemical reduction of oxygen or carbon dioxide  \cite{Calle-Vallejo2014,Calle2015,Zhao2016}.
 %
 Assuming a volcano-plot relationship, 
 the reaction free energy $\Delta G$ and the aGCN are related by the following general expression:
@@ -558,9 +562,9 @@ the reaction free energy $\Delta G$ and the aGCN are related by the following ge
 \label{eq:volcano}
 \end{equation}
 %
-where the coefficients a1, b1, a2, b2, and the value of the $aGCN^{volcano-peak}$ should be derived from a small set of DFT calculations, if not available in the literature \cite{FCVChemSci2018}. For example, the case of ORR on Pt\cite{Rossi2020}.
+where the coefficients a1, b1, a2, b2, and the value of the $aGCN^{volcano-peak}$ should be derived from a small set of DFT calculations, if not available in the literature \cite{FCVChemSci2018}. For example, the case of the oxygen reduction reaction on Pt nanoparticles \cite{Rossi2020}. Whilst the determination of a current density via this protocol has not yet been explicitly computed via \texttt{Sapphire}, the precise formulation provided by Rossi \textit{et al} \cite{Rossi2020}, and implemented by Gazzarrini \textit{et al} \cite{Gazzarrini2021} have been adopted within \texttt{Sapphire}.
 
-Once the Gibbs free energy is defined in terms of the aGCN, a quantity that can be monitored during the lifetime of a MNP, we can establish relationships between the ageing of a MNP, referring to its structural stability, and its activity. Examples have been reported previously by our group for ORR on Pt \cite{Rossi2020}, and for the conversion of CO2 into methane on Cu NPs \cite{Gazzarrini2021}. Under the assumption of identifying robust structure-activity relationships, we do not see any limitation in using the scheme for NAs and for other chemical reactions.
+Once the Gibbs free energy is defined in terms of the aGCN, a quantity that can be monitored during the lifetime of a MNP, we can establish relationships between the ageing of a MNP, referring to its structural stability, and its activity. Examples have been reported previously by our group for ORR on Pt \cite{Rossi2020}, and for the conversion of CO$_{2}$ into methane on Cu NPs \cite{Gazzarrini2021}. Under the assumption of identifying robust structure-activity relationships, we do not see any limitation in using the scheme for NAs and for other chemical reactions.
 
 \subsection{Optical properties via semi-classical methods}
 
@@ -581,31 +585,33 @@ The interested reader is referred to previous literature for further detail \cit
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=8cm]{figures/Sapphire/Faraday_Light.jpeg}
-    \caption{An illustration of the interaction between \texttt{Sapphire} and \texttt{pyGDM}. Top left, Au$_{1132}^{Ih}$Pt$_{283}^{Ih}$ consisting of Au (orange), and Pt (green) showing a Janus chemical ordering. Top-right, the local field intensity under 520 nm illuminatiom. Bottom panel, the computed extinction spectrum for the nanoalloy}
+    \caption{An illustration of the interaction between \texttt{Sapphire} and \texttt{pyGDM}. Top left, Au$_{1132}^{Ih}$Pt$_{283}^{Ih}$ consisting of Au (orange), and Pt (green) showing a Janus chemical ordering. Top-right, the local field intensity under 520 nm illumination. Bottom panel, the computed extinction spectrum for the NA}
     \label{fig:light}
 \end{figure}
 
 Any behaviour that may arise from quantum many-body effects is neglected.
-Furthermore, when considering structures with size $\sim$ 1 nm illuminated in the ultraviolet–visible–near-infrared, the incident field will only weakly couple to the structure. 
+Furthermore, when considering structures with size $\sim$ 1 nm illuminated in the UV~-~Vis~-~NIR, the incident field will only weakly couple to the structure. 
 This results in non-trivial internal field enhancement.
 
 Figure \ref{fig:light} reports the dipole mesh reconstructed from atomic coordinates and species in the left set of panels, and the near-field enhancement at 520 nm plane wave illumination on the right side. Intensity, as described by the colour bar, is reported as $|\mathbf{E}\left(\mathbf{r}\right)|^{2}/|\mathbf{E}_{0}|^{2}$, the strength of the field relative to the amplitude of the illuminating wave.
-In the bottom panel, we present the extinction spectra computed via Eqn. \ref{eqn:ext_gdm} for four each of the different systems taken in consideration.
+In the bottom panel, we present the extinction spectra computed via Equation \ref{eqn:ext_gdm} for four each of the different systems taken in consideration.
 %
 We have elected to present these systems to demonstrate the utility in being able to directly map a set of atomic coordinates, as may be parsed from a structural file, to a mesh of coupled dipoles with pre-defined dielectric properties. 
 
 \section{Discussion}
-The characterisation and classification of the morphology and chemical ordering in mono-, bi-, and multi-metallic nanoalloys is a key ingredient towards rationalising their chemo-physical properties.
+The characterisation and classification of the morphology and chemical ordering in mono-, bi-, and multi-metallic NAs is a key ingredient towards rationalising their chemo-physical properties.
 %
 
-The necessity of an open-source robust, reproducible, and FAIR compliant post-processing tools, which caters the needs of the nanoalloy computational modelling community, is more and more evident.
-\texttt{Sapphire} is tailored specifically to address this need by providing a library of standardised analysis tools for nanoalloy characterisation.
+The necessity of an open-source robust, reproducible, and FAIR compliant post-processing tools, which caters the needs of the NA computational modelling community, is more and more evident.
+\texttt{Sapphire} is tailored specifically to address this need by providing a library of standardised analysis tools for NA characterisation.
 \texttt{Sapphire} is indeed an open-source, modular, user-friendly platform to characterise a nanoparticle's  architecture observed during, \textit{e.g.,} atom coordinates reconstructions from experiment,
 molecular dynamics, or Monte Carlo based sampling.
 
 Within \texttt{Sapphire}, several order-parameters and descriptors can be calculated, namely: pair distance and radial distribution functions, 
 inertia tensors and quantity derived from the latter, coordination distributions and other topological descriptors (generalised coordination and common neighbour analysis) derived from adjacency matrices. 
-\texttt{Sapphire} also provides tools for detailed analysis of the surface of nanoalloys
-%
+\texttt{Sapphire} also provides tools for detailed analysis of the surface of NAs.
+
+ A salient point which we have not yet addressed is that of timescales. We have presented in the work of \texttt{Sapphire} dynamical simulations on the order of nanoseconds in length. As has been discussed in the previous chapter, it is not uncommon for reconstruction events observed in the context of NAs to occur on the order of minutes to hours. We have already argued that such times are beyond reach at this level of theory, which therefore invites the question of how may we adequately sample the PES of candidate structures with \texttt{Sapphire}. A clear, and natural answer, is to incorporate methods described in Section \ref{sec:md_opt}. Among these would be methods such as basin hopping, and the iterations thereof discussed earlier, as this is an efficient method for determining the equilibrium geometry of an NA and map out local minima existing on its PES.
+
 In the long term, it is our vision that \texttt{Sapphire} may serve to create a standardised, meaningful, characterisation and classification tool for nanoalloys. 
 This will be the first critical stage in creating a comprehensive community database for such complex systems.
